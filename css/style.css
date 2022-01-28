@@ -1,3 +1,46 @@
-body{
-    margin: 100px;
+.body{
+    margin: 0;
+    width: 100%;;
+    background-color:antiquewhite;
+}
+
+.cuerpo{
+    background-color: beige;
+    width: 70%;
+    height: 45%;
+    margin-left: 10px;
+    margin-right: 50%;
+    margin-bottom: 10px;
+    
+}
+
+#showTable{
+    padding: 100%;
+    width: 95%;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10%;
+    border-color: red;
+
+}
+
+h2, .titulo{
+    background-color: beige;
+    width: 90%;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 25%;
+    text-align: center;
+    border-color: black 5px;
+  
+}
+
+#showDetalle{
+    width: 60%;
+    height: 100px;
+    margin-bottom: 10px;
+    margin-left: 170px;
+    margin-right: 25%;
+    background-color: azure;
+    text-align: l;
 }

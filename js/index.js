@@ -1,10 +1,9 @@
-
 const PORT = 3300;
 const DOMINIO = "localhost";
 const API = `http://${DOMINIO}:${PORT}`;
 
 function showDetalle(id){
-    alert(`Hola mi id en mongodb es:${id}`);
+    getDetalleEstudiante(id);    
 }
 
 function showAllStudents(){
@@ -34,4 +33,28 @@ function showAllStudents(){
     xhttp.send(null);
 };
 
+function getDetalleEstudiante(id){
+    const xhttp = new XMLHttpRequest();
+    const jsonParametro = {"id":id};
+    const jsonParametroStringify = JSON.stringify(jsonParametro);
+    
+    xhttp.open("POST",`${API}/detalle`, true);
+
+    xhttp.onload = function(){
+        if(this.readyState == 4 && this.status == 200){
+            jsonData = JSON.parse(this.responseText);
+            let nombre = (jsonData.Nombre === undefined)?"sin Nombre": jsonData.Nombre;
+            let edad = (jsonData.Edad === undefined)?"sin Edad": jsonData.Edad;
+            let Profesion =  (jsonData.Profesion === undefined)?"sin Profesion": jsonData.Profesion;
+            let divHTML = "";
+            document.getElementById("showDetalle").innerHTML = divHTML;
+            divHTML += `<p><h3>Nombre:${" "+nombre}</h3></p>`;
+            divHTML += `<p><h3>Nombre:${" "+edad}</h3></p>`;
+            divHTML += `<p><h3>Profesion:${" "+Profesion}</h3></p>`;
+            document.getElementById("showDetalle").innerHTML =divHTML;
+        }
+    }
+    xhttp.setRequestHeader('Content-Type','application/json');
+    xhttp.send(jsonParametroStringify);
+}
 showAllStudents();
