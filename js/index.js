@@ -48,7 +48,7 @@ function getDetalleEstudiante(id){
             let Profesion =  (jsonData.Profesion === undefined)?"sin Profesion": jsonData.Profesion;
             let divHTML = "";
             document.getElementById("showDetalle").innerHTML = divHTML;
-            divHTML += `<p><h3>Nombre:${" "+nombre}</h3></p>`;
+            divHTML += `<p><h3>Nombre:${" ",nombre}</h3></p>`;
             divHTML += `<p><h3>Nombre:${" "+edad}</h3></p>`;
             divHTML += `<p><h3>Profesion:${" "+Profesion}</h3></p>`;
             document.getElementById("showDetalle").innerHTML =divHTML;
